@@ -5,7 +5,7 @@
 ## Clone Project
 **Folder Name:** `technical-task`
 ```bash
-  git clone 
+  git clone https://github.com/cygner/technical-task.git
 ```
 
 **Change directory**
