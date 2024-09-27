@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "9aac69d0-45f3-440d-abae-bc37fed74c28",
+		"name": "Technical Task",
+		"description": "## **Laravel Relationships Modules**\n\n- Users\n    \n- Post\n    \n\nOne User has many Posts (One to Many Relationships)  \nPost Image upload to AWS S3 bucket\n\n## Open Weather Map API Integration\n\nfetch current weather data on home page with city selection option",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25519244"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}api/v1/user",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"user"
+							]
+						},
+						"description": "Call this API to get all users list"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}api/v1/user/{id}",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"user",
+								"{id}"
+							]
+						},
+						"description": "Call this API to get a selected user with her Posts data"
+					},
+					"response": []
+				}
+			],
+			"description": "## **The Users API list is mentioned below**\n\n- **List:** Get All Users.\n    \n- **Get User By ID:** Get single user data with her Posts."
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}api/v1/post",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"post"
+							]
+						},
+						"description": "Call this API to get all Posts list"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}api/v1/post/{id}",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"post",
+								"{id}"
+							]
+						},
+						"description": "Call this API to get a selected Post with her User data"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Post",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Content",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1ef7cae8-4a08-4200-a502-8fdd9044748a"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}api/v1/post",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"post"
+							]
+						},
+						"description": "Call this API to Create a Post"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "patch",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Post Edit",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Content Edit #test",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1ef7caeb-9b3b-4250-ab1c-543f962e43ec"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}api/v1/post/{id}",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"post",
+								"{id}"
+							]
+						},
+						"description": "Call this API to Update the selected Post"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}api/v1/post/{id}",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"post",
+								"{id}"
+							]
+						},
+						"description": "Call this API to Delete the selected Post"
+					},
+					"response": []
+				}
+			],
+			"description": "## **The Posts API list is mentioned below**\n\n- **List:** Get All Posts.\n    \n- **Get Post By ID:** Get single user data with her Posts.\n    \n- **Create Post:** Enter user_id, title, content and image to create the Post.\n    \n- **Update Post:** Select post then Enter the _method: PATCH and title, content and image to update the Post.\n    \n- **Delete Post:** Delete the selected Post."
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://technical-task.test/",
+			"type": "string"
+		}
+	]
+}
